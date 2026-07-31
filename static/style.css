@@ -20,7 +20,7 @@ body {
 
 #card-container {
     perspective: 1000px;
-    flex: 1;                /* 가운데 영역을 차지 */
+    flex-basis: 65%;                /* 가운데 영역을 차지 */
     max-width: 65%;         /* 카드 최대 너비 제한 */
     height: 100%;
     display: flex;
@@ -37,6 +37,7 @@ body {
     cursor: pointer;
     display: none;
     transform-origin: center center; /* 회전 기준을 중앙으로 */
+    margin: auto;
     position: relative;              /* 중앙 배치 안정화 */
 }
 
