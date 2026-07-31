@@ -52,6 +52,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // 버튼 이벤트
+    document.getElementById("nextBtn").addEventListener("click", () => {
+        randomCard();   // 오른쪽 버튼 → 랜덤 카드
+    });
+
+    document.getElementById("prevBtn").addEventListener("click", () => {
+        randomCard();   // 왼쪽 버튼 → 랜덤 카드 (원하면 prevCard로 변경 가능)
+    });
+
     // 첫 카드 표시
     showCard(currentIndex);
 });
