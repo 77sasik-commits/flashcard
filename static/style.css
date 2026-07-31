@@ -12,9 +12,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 90vw;
-    max-width: 1000px;
-    height: 70vh;
+    width: 95vw;
+    max-width: 1200px;
+    height: 75vh; /* 카드와 화살표가 화면 비율에 맞게 */
 }
 
 #card-container {
@@ -76,14 +76,14 @@ body {
     background: rgba(255, 255, 255, 0.1); /* 반투명 배경 */
     border: none;
     border-radius: 50%;
-    padding: 15px;
+    padding: 20px;
     cursor: pointer;
     transition: background 0.3s, transform 0.2s;
 }
 
 #card-wrapper button:hover {
     background: rgba(255, 255, 255, 0.25);
-    transform: scale(1.1); /* hover 시 확대 */
+    transform: scale(1.15); /* hover 시 확대 */
 }
 
 #card-wrapper button:active {
@@ -92,7 +92,22 @@ body {
 }
 
 #card-wrapper svg {
-    width: 50px;   /* 화살표 크기 키움 */
-    height: 50px;
+    width: 60px;   /* 화살표 크기 키움 */
+    height: 60px;
     stroke: white;
+}
+
+/* 모바일 최적화 */
+@media (max-width: 768px) {
+    #card-wrapper {
+        width: 100vw;
+        height: 80vh;
+    }
+    #card-wrapper svg {
+        width: 40px;
+        height: 40px;
+    }
+    #card-wrapper button {
+        padding: 15px;
+    }
 }
