@@ -3,7 +3,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     margin: 0;
     background: #2b2b2b;
 }
@@ -12,9 +11,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 95vw;
+    width: 1140px;
     max-width: 1200px;
-    height: 75vh;
+    height: 600px;
+    margin: 0 auto;
 }
 
 #card-container {
@@ -150,11 +150,13 @@ body {
     #card-wrapper {
         flex-direction: column;
         justify-content: center;
+        width: 90%;
+        height: 500px;
     }
 
     #card-container {
         width: 90%;
-        height: 65vh;
+        height: 400px;
         margin: 20px 0;
     }
 
