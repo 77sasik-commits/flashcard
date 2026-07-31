@@ -11,9 +11,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 1140px;
+    width: 90%;
     max-width: 1200px;
-    height: 600px;
+    height: 75%;
     margin: 0 auto;
 }
 
@@ -151,12 +151,12 @@ body {
         flex-direction: column;
         justify-content: center;
         width: 90%;
-        height: 500px;
+        height: 65%;
     }
 
     #card-container {
         width: 90%;
-        height: 400px;
+        height: 650;
         margin: 20px 0;
     }
 
