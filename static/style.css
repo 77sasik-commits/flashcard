@@ -28,16 +28,16 @@ body {
 }
 
 .card {
+    position: absolute; /* 겹치기 */
+    top: 0; left: 0;
     width: 100%;
     height: 100%;
-    cursor: pointer;
-    display: none;
-    position: relative;
-    margin: auto;
+    opacity: 0;
+    visibility: hidden;
 }
-
 .card.active {
-    display: block;
+    opacity: 1;
+    visibility: visible;
 }
 
 /* 앞/뒷면 페이드 전환 */
@@ -97,23 +97,23 @@ body {
 }
 
 @keyframes slideInRight {
-    from { transform: translateX(100%); opacity: 0; }
-    to   { transform: translateX(0); opacity: 1; }
+    from { transform: translateX(100%) scale(1); opacity: 0; }
+    to   { transform: translateX(0) scale(1); opacity: 1; }
 }
 
 @keyframes slideOutLeft {
-    from { transform: translateX(0); opacity: 1; }
-    to   { transform: translateX(-100%); opacity: 0; }
+    from { transform: translateX(0) scale(1); opacity: 1; }
+    to   { transform: translateX(-100%) scale(1); opacity: 0; }
 }
 
 @keyframes slideInLeft {
-    from { transform: translateX(-100%); opacity: 0; }
-    to   { transform: translateX(0); opacity: 1; }
+    from { transform: translateX(-100%) scale(1); opacity: 0; }
+    to   { transform: translateX(0) scale(1); opacity: 1; }
 }
 
 @keyframes slideOutRight {
-    from { transform: translateX(0); opacity: 1; }
-    to   { transform: translateX(100%); opacity: 0; }
+    from { transform: translateX(0) scale(1); opacity: 1; }
+    to   { transform: translateX(100%) scale(1); opacity: 0; }
 }
 
 /* 화살표 버튼 */
