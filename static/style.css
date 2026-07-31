@@ -21,9 +21,9 @@ body {
 #card-container {
     perspective: 1000px;
     position: relative;
-    width: 70%;   /* 카드 영역을 화면의 70%로 제한 */
+    width: 65%;   /* 카드 영역을 화면의 70%로 제한 */
     height: 100%;
-    margin: 0 40px; /* 화살표와 카드 사이 여백 */
+    margin: 0 60px; /* 화살표와 카드 사이 여백 */
 }
 
 .card {
