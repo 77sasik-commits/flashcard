@@ -72,7 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.getElementById("prevBtn").addEventListener("click", () => {
-        prevCard();
+        randomCard();
+        //prevCard();
     });
 
     // 첫 카드 표시 → 랜덤 모드로 변경
