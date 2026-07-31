@@ -68,12 +68,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 버튼 이벤트
     document.getElementById("nextBtn").addEventListener("click", () => {
-        nextCard();
+        //nextCard();
+        randomCard();
     });
 
     document.getElementById("prevBtn").addEventListener("click", () => {
-        randomCard();
-        //prevCard();
+        prevCard();
     });
 
     // 첫 카드 표시 → 랜덤 모드로 변경
