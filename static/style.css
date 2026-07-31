@@ -24,9 +24,9 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 65%;   /* 카드 영역을 줄여서 버튼과 분리 */
+    width: 65%;
     height: 100%;
-    margin: 0 80px; /* 버튼과 카드 사이 충분한 여백 */
+    margin: 0 100px; /* 버튼과 카드 사이 충분한 여백 */
 }
 
 .card {
@@ -37,7 +37,7 @@ body {
     cursor: pointer;
     display: none;
     transform-origin: center center; /* 회전 기준을 중앙으로 */
-    margin: auto; /* 항상 중앙 */
+    margin: auto;
     position: absolute;
 }
 
@@ -88,6 +88,7 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 10; /* 카드 위로 올려서 겹치지 않게 */
 }
 
 #prevBtn {
@@ -118,6 +119,29 @@ body {
 
 /* 모바일 최적화 */
 @media (max-width: 768px) {
+    #card-wrapper {
+        flex-direction: column; /* 모바일에서는 세로 배치 */
+        justify-content: center;
+    }
+
     #card-container {
-        width: 85%;
-        margin
+        width: 90%;
+        height: 65vh;
+        margin: 20px 0; /* 버튼과 카드 위아래로 분리 */
+    }
+
+    #prevBtn, #nextBtn {
+        position: static; /* 모바일에서는 카드 아래쪽으로 이동 */
+        transform: none;
+        margin: 10px;
+    }
+
+    #card-wrapper svg {
+        width: 45px;
+        height: 45px;
+    }
+
+    #card-wrapper button {
+        padding: 15px;
+    }
+}
