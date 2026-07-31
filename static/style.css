@@ -44,6 +44,7 @@ body {
 
 .card.active {
     display: block;
+    margin: auto;
 }
 
 .card.flipped {
