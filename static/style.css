@@ -93,12 +93,12 @@ body {
 
 #prevBtn {
     left: 0;
-    margin-left: 20px;
+    margin-right: 20px;
 }
 
 #nextBtn {
     right: 0;
-    margin-right: 40px;
+    margin-left: 20px;
 }
 
 #card-wrapper button:hover {
