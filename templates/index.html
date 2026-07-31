@@ -13,14 +13,22 @@
             </div>
             <div class="back">
                 <p><strong>정의:</strong> {{ card['정의'] }}</p>
-                
                 <p><strong>키워드:</strong> {{ card['키워드'] }}</p>
-      
                 <p><strong>암기법:</strong> {{ card['암기법'] }}</p>
             </div>
         </div>
         {% endfor %}
     </div>
+
+    <!-- 하단 화살표 버튼 -->
+    <div id="controls">
+        <button id="prevBtn">⬅️</button>
+        <button id="nextBtn">➡️</button>
+    </div>
+
+    <script>
+        const cards = {{ cards|tojson }};
+    </script>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
