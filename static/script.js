@@ -8,16 +8,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // 현재 카드 슬라이드 아웃
         if (currentCard) {
-            currentCard.classList.add("exit");
+            const exitClass = direction === "right" ? "exit-left" : "exit-right";
+            currentCard.classList.add(exitClass);
             currentCard.addEventListener("animationend", () => {
-                currentCard.classList.remove("exit", "active", "flipped");
+                currentCard.classList.remove(exitClass, "active", "flipped");
             }, { once: true });
         }
 
         // 새 카드 슬라이드 인
-        nextCard.classList.add("enter", "active");
+        const enterClass = direction === "right" ? "enter-right" : "enter-left";
+        nextCard.classList.add(enterClass, "active");
         nextCard.addEventListener("animationend", () => {
-            nextCard.classList.remove("enter");
+            nextCard.classList.remove(enterClass);
         }, { once: true });
 
         currentIndex = index;
@@ -39,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function randomCard() {
         let newIndex = Math.floor(Math.random() * cards.length);
-        showCard(newIndex);
+        showCard(newIndex, "right"); // 랜덤은 오른쪽 방향으로 기본 처리
     }
 
     // 클릭 → 카드 뒤집기
@@ -66,13 +68,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 버튼 이벤트
     document.getElementById("nextBtn").addEventListener("click", () => {
-        nextCard();   // 오른쪽 버튼 → 다음 카드
+        nextCard();
     });
 
     document.getElementById("prevBtn").addEventListener("click", () => {
-        prevCard();   // 왼쪽 버튼 → 이전 카드
+        prevCard();
     });
 
     // 첫 카드 표시
-    showCard(currentIndex);
+    showCard(currentIndex, "right");
 });
