@@ -5,30 +5,33 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div id="card-container">
-        {% for card in cards %}
-        <div class="card">
-            <div class="front">
-                <h2>{{ card['토픽'] }}</h2>
-            </div>
-            <div class="back">
-                <p><strong>정의:</strong> {{ card['정의'] }}</p>
-                <p><strong>키워드:</strong> {{ card['키워드'] }}</p>
-                <p><strong>암기법:</strong> {{ card['암기법'] }}</p>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-
-    <!-- 하단 화살표 버튼 -->
-    <div id="controls">
+    <div id="card-wrapper">
+        <!-- 왼쪽 화살표 -->
         <button id="prevBtn" aria-label="Previous">
-            <svg width="40" height="40" viewBox="0 0 24 24">
+            <svg viewBox="0 0 24 24">
                 <path d="M15 18l-6-6 6-6" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </button>
+
+        <!-- 카드 컨테이너 -->
+        <div id="card-container">
+            {% for card in cards %}
+            <div class="card">
+                <div class="front">
+                    <h2>{{ card['토픽'] }}</h2>
+                </div>
+                <div class="back">
+                    <p><strong>정의:</strong> {{ card['정의'] }}</p>
+                    <p><strong>키워드:</strong> {{ card['키워드'] }}</p>
+                    <p><strong>암기법:</strong> {{ card['암기법'] }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- 오른쪽 화살표 -->
         <button id="nextBtn" aria-label="Next">
-            <svg width="40" height="40" viewBox="0 0 24 24">
+            <svg viewBox="0 0 24 24">
                 <path d="M9 6l6 6-6 6" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </button>
