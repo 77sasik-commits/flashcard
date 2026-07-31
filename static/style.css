@@ -5,7 +5,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: #2b2b2b; /* 진한 그레이 배경 */
+    background: #2b2b2b;
 }
 
 #card-wrapper {
@@ -15,19 +15,17 @@ body {
     width: 95vw;
     max-width: 1200px;
     height: 75vh;
-    position: relative;
 }
 
 #card-container {
     perspective: 1000px;
-    flex-basis: 65%;                /* 가운데 영역을 차지 */
-    max-width: 65%;         /* 카드 최대 너비 제한 */
+    width: 65%;          /* 카드 영역 명확히 지정 */
     height: 100%;
     display: flex;
     justify-content: center; /* 카드 중앙 정렬 */
     align-items: center;
-    margin: auto;
     position: relative;
+    margin: auto;
 }
 
 .card {
@@ -37,18 +35,17 @@ body {
     transition: transform 0.8s;
     cursor: pointer;
     display: none;
-    transform-origin: center center; /* 회전 기준을 중앙으로 */
+    transform-origin: center center;
+    position: relative;
     margin: auto;
-    position: relative;              /* 중앙 배치 안정화 */
 }
 
 .card.active {
     display: block;
-    margin: auto;
 }
 
 .card.flipped {
-    transform: rotateY(180deg); /* 위아래로 뒤집기 */
+    transform: rotateY(180deg); /* 좌우 뒤집기 */
 }
 
 .front, .back {
@@ -56,14 +53,12 @@ body {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    border: none;
     border-radius: 12px;
     background: #3a3a3a;
     color: #f5f5f5;
     padding: 30px;
     box-shadow: 0 6px 10px rgba(0,0,0,0.4);
     overflow-y: auto;
-    margin: auto;
 }
 
 .front {
@@ -73,13 +68,11 @@ body {
     font-size: 2.5em;
     font-weight: bold;
     text-align: center;
-    margin: auto;
 }
 
 .back {
     transform: rotateY(180deg);
     font-size: 1.2em;
-    margin: auto;
 }
 
 /* 화살표 버튼 */
@@ -90,15 +83,8 @@ body {
     padding: 25px;
     cursor: pointer;
     transition: background 0.3s, transform 0.2s;
-    z-index: 10;
-}
-
-#prevBtn {
-    margin-left: 20px; /* 왼쪽 버튼은 화면 끝에서 살짝 안쪽 */
-}
-
-#nextBtn {
-    margin-right: 20px; /* 오른쪽 버튼도 끝에서 살짝 안쪽 */
+    position: static; /* flex 아이템으로 배치 */
+    margin: 0 20px;
 }
 
 #card-wrapper button:hover {
@@ -131,8 +117,6 @@ body {
     }
 
     #prevBtn, #nextBtn {
-        position: static; /* 카드 아래쪽으로 이동 */
-        transform: none;
         margin: 10px;
     }
 
