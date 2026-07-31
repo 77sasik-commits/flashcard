@@ -75,6 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
         prevCard();
     });
 
-    // 첫 카드 표시
-    showCard(currentIndex, "right");
+    // 첫 카드 표시 → 랜덤 모드로 변경
+    randomCard();
 });
