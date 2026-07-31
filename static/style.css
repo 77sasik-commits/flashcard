@@ -15,6 +15,7 @@ body {
     max-width: 1200px;
     height: 75%;
     margin: 0 auto;
+    min-height: 500px; /* 최소 높이 보장 */
 }
 
 #card-container {
@@ -25,10 +26,12 @@ body {
     align-items: center;
     position: relative;
     margin: auto;
+    min-width: 400px;  /* 최소 폭 보장 */
+    min-height: 300px; /* 최소 높이 보장 */
 }
 
 .card {
-    position: absolute; /* 겹치기 */
+    position: absolute;
     top: 0; left: 0;
     width: 93%;
     height: 100%;
@@ -82,35 +85,23 @@ body {
 }
 
 /* 방향별 슬라이드 애니메이션 */
-.card.enter-right {
-    animation: slideInRight 0.6s forwards;
-}
-.card.exit-left {
-    animation: slideOutLeft 0.6s forwards;
-}
-
-.card.enter-left {
-    animation: slideInLeft 0.6s forwards;
-}
-.card.exit-right {
-    animation: slideOutRight 0.6s forwards;
-}
+.card.enter-right { animation: slideInRight 0.6s forwards; }
+.card.exit-left   { animation: slideOutLeft 0.6s forwards; }
+.card.enter-left  { animation: slideInLeft 0.6s forwards; }
+.card.exit-right  { animation: slideOutRight 0.6s forwards; }
 
 @keyframes slideInRight {
     from { transform: translateX(100%) scale(1); opacity: 0; }
     to   { transform: translateX(0) scale(1); opacity: 1; }
 }
-
 @keyframes slideOutLeft {
     from { transform: translateX(0) scale(1); opacity: 1; }
     to   { transform: translateX(-100%) scale(1); opacity: 0; }
 }
-
 @keyframes slideInLeft {
     from { transform: translateX(-100%) scale(1); opacity: 0; }
     to   { transform: translateX(0) scale(1); opacity: 1; }
 }
-
 @keyframes slideOutRight {
     from { transform: translateX(0) scale(1); opacity: 1; }
     to   { transform: translateX(100%) scale(1); opacity: 0; }
@@ -128,17 +119,14 @@ body {
     margin: 0 20px;
     z-index: 20;
 }
-
 #card-wrapper button:hover {
     background: rgba(255, 255, 255, 0.25);
     transform: scale(1.15);
 }
-
 #card-wrapper button:active {
     background: rgba(255, 255, 255, 0.4);
     transform: scale(0.95);
 }
-
 #card-wrapper svg {
     width: 70px;
     height: 70px;
@@ -150,26 +138,21 @@ body {
     #card-wrapper {
         flex-direction: column;
         justify-content: center;
-        width: 90%;
+        width: 95%;
         height: 65%;
+        min-height: 400px; /* 모바일 최소 높이 */
     }
 
     #card-container {
-        width: 90%;
-        height: 650;
+        width: 95%;
+        height: 60%;
         margin: 20px 0;
+        min-height: 300px;
     }
 
-    #prevBtn, #nextBtn {
-        margin: 10px;
-    }
+    #prevBtn, #nextBtn { margin: 10px; }
 
-    #card-wrapper svg {
-        width: 45px;
-        height: 45px;
-    }
+    #card-wrapper svg { width: 45px; height: 45px; }
 
-    #card-wrapper button {
-        padding: 15px;
-    }
+    #card-wrapper button { padding: 15px; }
 }
