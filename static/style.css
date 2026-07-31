@@ -6,6 +6,7 @@ body {
     height: 100vh;
     margin: 0;
     background: #f0f0f0;
+    flex-direction: column; /* 버튼을 하단에 배치하기 위해 세로 정렬 */
 }
 
 #card-container {
@@ -60,4 +61,18 @@ body {
 .back {
     transform: rotateY(180deg);
     font-size: 1.2em;
+}
+
+/* 하단 화살표 버튼 */
+#controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+#controls button {
+    font-size: 8vw;
+    padding: 10px 20px;
+    border-radius: 10px;
 }
