@@ -1,7 +1,6 @@
 body {
     font-family: Arial, sans-serif;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -9,13 +8,21 @@ body {
     background: #2b2b2b; /* 눈에 편한 진한 그레이 */
 }
 
+#card-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90vw;
+    max-width: 1000px;
+    height: 70vh;
+}
+
 #card-container {
     perspective: 1000px;
     position: relative;
-    width: 80vw;
-    height: 60vh;
-    max-width: 900px;
-    max-height: 700px;
+    flex: 1;
+    height: 100%;
+    margin: 0 20px;
 }
 
 .card {
@@ -43,8 +50,8 @@ body {
     backface-visibility: hidden;
     border: none;
     border-radius: 12px;
-    background: #3a3a3a; /* 카드 색상도 어두운 그레이 */
-    color: #f5f5f5; /* 글자는 밝게 */
+    background: #3a3a3a; /* 카드 색상 */
+    color: #f5f5f5;
     padding: 30px;
     box-shadow: 0 6px 10px rgba(0,0,0,0.4);
     overflow-y: auto;
@@ -64,27 +71,28 @@ body {
     font-size: 1.2em;
 }
 
-/* 하단 화살표 버튼 */
-#controls {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-}
-
-#controls button {
+/* 화살표 버튼 */
+#card-wrapper button {
     background: rgba(255, 255, 255, 0.1); /* 반투명 배경 */
-    border: none; /* 테두리 제거 */
-    border-radius: 50%; /* 동그란 버튼 */
-    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
 }
 
-#controls button:hover {
-    background: rgba(255, 255, 255, 0.2); /* 호버 시 조금 더 밝게 */
+#card-wrapper button:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.1); /* hover 시 확대 */
 }
 
-#controls svg {
-    display: block;
+#card-wrapper button:active {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(0.95); /* 클릭 시 살짝 줄어듦 */
+}
+
+#card-wrapper svg {
+    width: 50px;   /* 화살표 크기 키움 */
+    height: 50px;
+    stroke: white;
 }
